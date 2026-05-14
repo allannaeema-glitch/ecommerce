@@ -80,6 +80,12 @@ module.exports = {
       template: "./src/index.html",
     }),
 
+   new HtmlWebpackPlugin({
+      filename: "product.html",
+      template: "./src/product.html",
+    }),
+  
+
     new HtmlWebpackPlugin({
   filename: "checkout.html",
   template: "./src/checkout.html",
