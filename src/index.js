@@ -42,6 +42,75 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.querySelectorAll('[data-product-quantity]').forEach(item => {
+
+    item.addEventListener('change', () => {
+
+        const newQuantity = item.value;
+
+        const parent = item.closest('[data-product-info]');
+
+        const pricePerUnit = parent.getAttribute('data-product-price');
+
+        const total = newQuantity * pricePerUnit;
+
+        parent.querySelector('.total-price-for-product').innerHTML = total + "$";
+
+    });
+
+});
+
+function updateTotalPrice() {
+
+    let totalPriceForAllProducts = 0;
+
+    document.querySelectorAll('[data-product-info]').forEach(product => {
+
+        const productPrice = Number(product.getAttribute('data-product-price'));
+
+        const quantity = Number(
+            product.querySelector('[data-product-quantity]').value
+        );
+
+        const totalPriceForProduct = productPrice * quantity;
+
+        product.querySelector('.total-price-for-product').innerHTML =
+            totalPriceForProduct + "$";
+
+        totalPriceForAllProducts += totalPriceForProduct;
+    });
+
+    document.getElementById('total-price-for-all-product').innerHTML =
+        totalPriceForAllProducts + "$";
+}
+
+
+/* تحديث الكمية */
+document.querySelectorAll('[data-product-quantity]').forEach(item => {
+    item.addEventListener('change', updateTotalPrice);
+});
+
+
+/* حذف المنتج */
+document.querySelectorAll('[data-action="remove"]').forEach(button => {
+
+    button.addEventListener('click', function () {
+
+        const productRow = this.closest('[data-product-info]');
+
+        productRow.remove();
+
+        updateTotalPrice();
+    });
+
+});
+
+
+/* تشغيل أول مرة */
+updateTotalPrice();
+
+updateTotalPrice();
+
 console.log("أهلًا بكم في متجر عربي")
 
 console.log("أهلًا بكم في أكاديمية حسوب")

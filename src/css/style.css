@@ -239,18 +239,17 @@ body {
     font-size: 24px;
     margin-bottom: 25px;
 }
-.custom-thumbnail img {
-    height: 250px;
-    width: 100%;
-    max-width: 250px;
-    object-fit: cover;
-}
 .custom-thumbnail {
     position: relative;
+    overflow: hidden;
+    width: 100%;
+}
 
-    border: 2px solid #eef0ea;
-    padding: 8px;
-    cursor: pointer;
+.custom-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 .custom-thumbnail:hover {
     border-color: #53ccd7;
@@ -264,23 +263,9 @@ body {
 .rating .active {
     color: #f3af41;
 }
-
 .overlay {
     position: absolute;
- 
-    background-color: rgba(83, 204, 215, 0.5);
-    height: 250px;
-    width: calc(100% - 16px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: all 0.3s ease;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
 
     background-color: rgba(83, 204, 215, 0.5);
 
@@ -295,9 +280,7 @@ body {
 .custom-thumbnail:hover .overlay {
     opacity: 1;
 }
-.overlay:hover {
-    opacity: 1;
-}
+
 .add-to-card-plus {
     background-color: #ff3956;
     border-color: #ff3956;
@@ -307,7 +290,6 @@ body {
     border-radius: 2px;
     font-weight: 700;
 }
-
 
 
 #products-carousel .carousel-indicators {
@@ -667,6 +649,7 @@ body {
     font-weight: bold;
     border-radius: 0;
     transition: 0.3s;
+    
 }
 
 .custom-btn-warning:hover,
@@ -676,6 +659,43 @@ body {
     border-color: #b86d07;
     color: #fff;
 }
+.checkout-actions {
+    width: 70%;   /* نفس عرض الجدول */
+    margin: 20px auto 0 auto;  /* يضعه تحت الجدول وفي المنتصف */
+    text-align: right; /* يمين داخل نفس العرض */
+}
+
+.checkout-actions button {
+    display: inline-flex;
+}
+/* الحاوية الكبيرة لإجمالي السعر والزر */
+.checkout-section-footer {
+    display: flex;
+    flex-direction: column; /* ترتيب السعر ثم الزر تحت بعض */
+    align-items: flex-end;   /* محاذاة العناصر لليسار (حسب اتجاه السعر في الصورة) */
+    padding: 20px 15%;      /* مسافة جانبية لتنسيق الموقع */
+    gap: 15px;              /* مسافة بين السعر والزر */
+}
+
+/* تنسيق السعر الإجمالي */
+.total-price-label {
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* تنسيق الزر - إلغاء العرض 100% */
+.checkout-actions .custom-btn-warning {
+    width: auto !important;     /* إجبار الزر على أخذ حجم محتواه فقط */
+    min-width: 250px;           /* عرض أدنى ليظهر بشكل جيد */
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0 30px !important;
+}
+
 
 /* =========================
    RESPONSIVE
@@ -901,7 +921,127 @@ body {
     font-size: 18px;
     margin-bottom: 5px;
 }
+/* checkout page */
+h1.custom-heading {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+.custom-media img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #EBEBEB;
+    margin-left: 10px;
+    object-fit: cover;
 
+}
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.custom-table th,
+.custom-table td {
+    padding: 15px;
+    font-size: 120%;
+    vertical-align: middle;
+    border-bottom: 1px solid #EBEBEB;
+    border-top: 1px solid #EBEBEB;
+     white-space: nowrap;
+}
+.custom-table h4 {
+    font-size: 18px;
+    margin: 12px 0;
+}
+.custom-table th {
+    color: #c2c2c2;
+    font-weight: normal;
+}
+.custom-table th:first-child,
+.custom-table td:first-child {
+    width: 50%;
+}
+.custom-table th:not(:first-child),
+.custom-table td:not(:first-child) {
+    text-align: center;
+}
+.custom-table tfoot td {
+    border-bottom: none;
+    font-size: 150%;
+}
+.custom-table {
+    width: 70%;
+    border-collapse: collapse;
+}
+.table-wrapper {
+    overflow-x: auto;
+}
+#total-price-for-all-product {
+    color: #000;
+}
+.custom-btn-outline-danger {
+    background-color: transparent;
+    border: 1px solid #ff3956;
+    color: #ff3956;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    min-width: 90px;
+}
+
+/* Hover */
+.custom-btn-outline-danger:hover {
+    background-color: #ff3956;
+    border-color: #ff3956;
+    color: #fff;
+}
+
+/* Focus */
+.custom-btn-outline-danger:focus {
+    box-shadow: 0 0 5px rgba(255, 57, 86, 0.4);
+}
+
+/* Active */
+.custom-btn-outline-danger:active {
+    transform: scale(0.97);
+}
+.custom-form-control-quantity {
+    width: 70px;
+    height: 38px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #555;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    outline: none;
+    padding: 0 8px;
+}
+
+/* عند التركيز */
+.custom-form-control-quantity:focus {
+    border-color: #f8ad47;
+    box-shadow: 0 0 4px rgba(248, 173, 71, 0.4);
+}
+
+/* عند المرور */
+.custom-form-control-quantity:hover {
+    border-color: #f8ad47;
+}
+.custom-form-control-quantity {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6 6 6-6'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+}
 
 /* =========================
    EXTRA RESPONSIVE FIX (FINAL PATCH)
@@ -1154,6 +1294,7 @@ body {
         height: auto;
         text-align: center;
     }
+
 }
 @media (min-width: 760px) and (max-width: 992px) {
 
@@ -1168,8 +1309,8 @@ body {
     }
 
     .custom-carousel-indicators-primary {
-        width: 55px !important;
-        height: 55px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
 
 }
@@ -1236,21 +1377,7 @@ body {
         left: -10px;
     }
 
-    .custom-carousel-indicators {
-        position: absolute;
-        bottom: 20px;
-        right: 50%;
-        transform: translateX(50%);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px;
-    }
-
-    .custom-carousel-indicators-primary {
-        width: 45px !important;
-        height: 45px !important;
-    }
+ 
 
     #carousel-featured .carousel-control-prev,
     #carousel-featured .carousel-control-next {
@@ -1276,4 +1403,76 @@ body {
         width: 50px !important;
         height: 50px !important;
     }
+}
+
+@media (min-width: 992px) {
+
+    .navbar-collapse {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar-nav .nav-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 14px;
+        white-space: nowrap;
+    }
+
+    #btn-shopping-cart {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 770px) {
+      
+        .col-3,
+    .col-md-3,
+    .col-lg-3 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+   /* الكارت */
+    .custom-thumbnail {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* الصورة */
+    .custom-thumbnail img {
+        width: 100%;
+        height: auto;
+        max-height: 260px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* overlay */
+    .overlay {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* الزر */
+    .add-to-card-plus {
+        font-size: 13px;
+        padding: 8px 14px;
+        max-width: 90%;
+        text-align: center;
+    }
+
 }
