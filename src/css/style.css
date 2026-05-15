@@ -5,7 +5,7 @@
         url('../fonts/JF-Flat-regular.svg#JF Flat Regular') format('svg'),
         url(../fonts/JF-Flat-regular.woff) format('woff'),
         url(../fonts/JF-Flat-regular.ttf) format('truetype');
-    font-weight: bolder;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -102,7 +102,7 @@ body {
     width: 100%;
 }
 
-.custom.navbar .btn-icon {
+.custom-navbar .btn-icon {
     padding: 5px 10px;
     color: #777;
     border: 1px solid #ddd;
@@ -115,8 +115,8 @@ body {
 
 /*قسم عرض الشرائح */
 #carousel-featured {
-    background-color: #f7f8f3;
-    padding-top: 25px;
+   position: relative;
+    padding-bottom: 110px;
     
 
 }
@@ -188,22 +188,19 @@ body {
     transform: rotate(-25deg);
 }
 .custom-carousel-indicators {
-     position: absolute;
-    bottom: 15px;
-    right: 50%;
-    transform: translateX(50%);
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    top: auto;
-}
+  top: 235px;
+  right: 41%;
+   }
+
+
 .custom-carousel-indicators-primary {
-    height: 70px !important;
     width: 70px !important;
+    height: 70px !important;
+    object-fit: cover;
+    border: 2px solid #ddd !important;
     opacity: 1 !important;
-    border: 2px solid #dddddb !important;
-    margin: 0  !important;
-    margin-left: 5px;
+    cursor: pointer;
+    margin: 0 !important;
 }
 
 .custom-carousel-indicators-primary.active {
@@ -245,13 +242,8 @@ body {
 .custom-thumbnail img {
     height: 250px;
     width: 100%;
- HEAD {
     max-width: 250px;
-}
-.custom-thumbnail {
-
     object-fit: cover;
-}           
 }
 .custom-thumbnail {
     position: relative;
@@ -791,11 +783,7 @@ body {
 }
 
 /* ضبط مكان المؤشرات لكي لا تتداخل مع الصورة */
-.custom-carousel-indicators {
-    position: absolute;
-    bottom: -30px; /* دفع الصور المصغرة لأسفل الصورة الكبيرة */
-    margin: 0;
-}
+
 
 .product-category {
     color: #a9a9a9;
@@ -1271,21 +1259,21 @@ body {
 
 }
 
-@media (max-width: 767px) {
+
+@media (max-width: 768px) {
+
+    #carousel-featured {
+        padding-bottom: 90px;
+    }
 
     .custom-carousel-indicators {
-        position: static;
-        transform: none;
-        margin-top: 15px;
-        justify-content: center;
+        bottom: 10px;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 6px;
     }
 
-    .custom-carousel-indicators img {
-        width: 55px !important;
-        height: 55px !important;
-        object-fit: cover;
+    .custom-carousel-indicators-primary {
+        width: 50px !important;
+        height: 50px !important;
     }
-
 }
