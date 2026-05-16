@@ -1087,7 +1087,38 @@ h1.custom-heading {
 .checkout-order-section{
     order: 3;
 }
+#btn-shopping-cart{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all .3s ease;
+    padding: 0;
+}
 
+#btn-shopping-cart i{
+    font-size: 18px;
+}
+
+#btn-shopping-cart:hover{
+    background-color: #ef473a;
+    border-color: #ef473a;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 991px){
+
+    #btn-shopping-cart{
+        margin-top: 10px;
+    }
+
+}
 /* الموبايل */
 @media (max-width: 767px){
 
