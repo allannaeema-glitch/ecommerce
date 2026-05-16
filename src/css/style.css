@@ -1042,6 +1042,85 @@ h1.custom-heading {
     background-repeat: no-repeat;
     background-position: left 10px center;
 }
+.custom-input-details.form-select {
+    padding-right: 12px;
+    padding-left: 35px;
+    background-position: left 12px center;
+}
+.checkout-order-section{
+    margin-bottom: 60px;
+}
+
+.custom-btn-with-icon{
+    width: auto;
+    min-width: 220px;
+    padding: 12px 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+.checkout-order-section .custom-btn-with-icon{
+    display: inline-flex;
+}
+
+.custom-btn-with-icon i{
+    font-size: 18px;
+}
+#form-checkout .row.gx-5{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* الشاشات الكبيرة */
+#form-checkout .order-md-1{
+    order: 1;
+}
+
+#form-checkout .order-md-2{
+    order: 2;
+}
+
+.checkout-order-section{
+    order: 3;
+}
+
+/* الموبايل */
+@media (max-width: 767px){
+
+    #form-checkout .row.gx-5{
+        flex-direction: column;
+    }
+
+    #form-checkout .order-md-1{
+        order: 1;
+    }
+
+    #form-checkout .order-md-2{
+        order: 2;
+    }
+
+    .checkout-order-section{
+        order: 3;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .custom-btn-with-icon{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .checkout-order-section{
+        margin-bottom: 40px;
+    }
+
+}
 
 /* =========================
    EXTRA RESPONSIVE FIX (FINAL PATCH)

@@ -18,7 +18,7 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "dist"),
     },
 
     hot: false,
@@ -89,12 +89,11 @@ module.exports = {
       filename: "checkout.html",
       template: "./src/checkout.html",
     }),
-  
 
     new HtmlWebpackPlugin({
-  filename: "checkout.html",
-  template: "./src/checkout.html",
-}),
+      filename: "payment.html",
+      template: "./src/payment.html",
+    }),
 
     new MiniCssExtractPlugin({
       filename: "css/style.css",

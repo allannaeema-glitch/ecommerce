@@ -105,11 +105,61 @@ document.querySelectorAll('[data-action="remove"]').forEach(button => {
 
 });
 
+document.querySelectorAll('#form-checkout input[name="payment_method"]').forEach(i => {
+  i.addEventListener('change', () => {
+    const paymentMethod = i.value;
+    const creditCardInputs = document.querySelectorAll('#credit_card_info input');
+
+    if (paymentMethod === 'on_delivery') {
+      creditCardInputs.forEach(input => {
+        input.style.display = 'none'
+      })
+    } else if (paymentMethod === 'credit_card')
+    {
+      creditCardInputs.forEach(input => {
+        input.style.display = 'block'
+      });
+    }
+  })
+})
 
 /* تشغيل أول مرة */
 updateTotalPrice();
 
 updateTotalPrice();
+
+
+// اخفاء واظهار حقول البطاقات الائتمانية
+
+const paymentRadios = document.querySelectorAll('input[name="payment_method"]');
+const creditCardInfo = document.getElementById('credit_card_info');
+
+function toggleCreditCardInfo(paymentMethod) {
+  if (!creditCardInfo) return;
+
+  const isOnDelivery = paymentMethod === 'on_delivery';
+  creditCardInfo.hidden = isOnDelivery;
+
+  creditCardInfo.querySelectorAll('input').forEach(input => {
+    input.required = !isOnDelivery;
+    input.disabled = isOnDelivery;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (!creditCardInfo) return;
+
+  paymentRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      toggleCreditCardInfo(radio.value);
+    });
+  });
+
+  const selectedPayment = Array.from(paymentRadios).find(radio => radio.checked);
+  if (selectedPayment) {
+    toggleCreditCardInfo(selectedPayment.value);
+  }
+});
 
 console.log("أهلًا بكم في متجر عربي")
 
