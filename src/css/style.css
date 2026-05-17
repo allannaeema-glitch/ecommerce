@@ -647,8 +647,10 @@ body {
     height: 45px;
     padding: 0 22px;
     font-weight: bold;
-    border-radius: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(248, 173, 71, 0.25);
     transition: 0.3s;
+    
     
 }
 
@@ -1112,6 +1114,245 @@ h1.custom-heading {
     transform: translateY(-2px);
 }
 
+/* -----search page----- */
+
+#form-advanced-search {
+    border: 1px solid #EBEBEB;
+    background: #fff;
+    border-radius: 4px;
+    padding: 8px;
+    height: fit-content;
+
+    
+   
+    
+}
+#form-advanced-search .panel {
+    border: none;
+    box-shadow: none;
+   
+}
+.panel .card-header {
+    background-color: transparent;
+    margin-bottom: 15px;
+    padding-bottom: 13px;
+}
+.custom-list-group .list-group-item {
+    border: none;
+}
+.custom-list-group {
+    border-bottom: 1px solid #EBEBEB;
+}
+#form-advanced-search label {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.custom-pagination .page-link {
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+    border: 1px solid #EBEBEB !important;
+    width: 32px !important;
+    height: 32px !important;
+    color: #c2c2c2 !important;
+    text-decoration: none !important;
+    outline: none !important;
+    transition: all 0.3s ease !important;
+}
+.custom-pagination .page-item.active .page-link {
+    background-color: #f8ad47;
+    color: #fff !important;
+    border-color: #f8ad47;
+}
+.custom-pagination .page-link:active,
+.custom-pagination .page-link:focus,
+.custom-pagination .page-link:hover {
+    color: #f8ad47 !important;
+    background-color: #fff !important;
+    border-color: #f8ad47 !important;
+}
+.contact-section {
+    background-color: #f8f8f8;
+    padding: 50px 30px;
+    border-radius: 10px;
+}
+
+.about-us {
+    padding: 20px;
+}
+
+.about-us h5,
+.contact-form h2,
+.contact-text h3 {
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-us p {
+    color: #777;
+    line-height: 1.9;
+}
+
+.contact-us li {
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 15px;
+}
+
+.contact-us li i {
+    color: #f0ad4e;
+    margin-left: 10px;
+}
+
+.contact-form {
+    padding: 20px;
+}
+
+.form-control {
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #f0ad4e;
+    box-shadow: none;
+}
+
+.custom-btn-warning {
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.custom-btn-warning:hover {
+    background-color: #e39a2d;
+    color: white;
+}
+
+.contact-form button.btn-primary {
+    background-color: #f0ad4e;
+    border: none;
+    padding: 10px 35px;
+}
+
+.contact-form button.btn-primary:hover {
+    background-color: #e39a2d;
+}
+
+.input-group .form-control {
+    border-left: 0;
+}
+
+#contacts {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.contact-form h2 {
+    font-size: 22px;
+}
+
+.about-us /* التنسيق العام */
+.about-us h5, .contact-form h2 {
+    color: #333;
+    position: relative;
+}
+
+/* تنسيق النشرة البريدية */
+.custom-newsletter .form-control {
+    border-radius: 0 8px 8px 0 !important; /* زوايا دائرية لليمين في RTL */
+    border: 1px solid #ddd;
+}
+
+.custom-newsletter .btn-send {
+    border-radius: 8px 0 0 8px !important; /* زوايا دائرية لليسار في RTL */
+    background-color: #f8ad47;
+    border: none;
+}
+.custom-newsletter .btn-send:hover {
+    background-color: #dc9f49;
+     transform: translateY( -1px);
+}
+
+/* تنسيق زر إرسال الرسالة كما طلبت سابقاً */
+.btn-contact-send {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row-reverse; /* الأيقونة يسار النص */
+    gap: 10px;
+    padding: 12px 25px;
+    background-color: #f8ad47;
+    border: none;
+    border-radius: 8px !important;
+    transition: 0.3s;
+}
+
+.btn-contact-send:hover {
+    background-color: #dc9f49;
+    transform: translateY(-2px);
+}
+
+/* التجاوب مع الشاشات */
+
+/* الشاشات الصغيرة (الموبايل) */
+@media (max-width: 767px) {
+    .about-us, .contact-form {
+        text-align: center; /* توسيط النصوص للموبايل */
+    }
+    
+    .store-address, .contact-us li {
+        justify-content: center; /* توسيط الأيقونات */
+    }
+
+    .btn-contact-send {
+        width: 100%; /* جعل الزر بعرض الشاشة في الموبايل */
+        justify-content: center;
+    }
+    
+    .custom-newsletter {
+        flex-direction: column; /* جعل حقل الإيميل والزر فوق بعض في الموبايل الصغير جداً */
+        gap: 10px;
+    }
+    
+    .custom-newsletter .form-control, 
+    .custom-newsletter .btn-send {
+        border-radius: 8px !important; /* زوايا كاملة في وضع الموبايل */
+        width: 100%;
+    }
+}
+
+/* الشاشات المتوسطة (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .about-us {
+        padding-right: 20px;
+    }
+}
+@media (max-width: 768px) {
+
+    .about-us,
+    .contact-form {
+        margin-bottom: 30px;
+    }
+
+    .contact-section {
+        padding: 30px 15px;
+    }
+}
+
+
+
+
+/* تثبيت مكان الفلاتر */
+@media (min-width: 768px) {
+    #form-advanced-search {
+        position: sticky;
+        top: 20px;
+    }
+}
 @media (max-width: 991px){
 
     #btn-shopping-cart{
@@ -1286,6 +1527,7 @@ h1.custom-heading {
 
     .custom-btn-warning {
         width: 100%;
+        
     }
 }
 @media (max-width: 576px) {
