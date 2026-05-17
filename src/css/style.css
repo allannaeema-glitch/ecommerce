@@ -321,7 +321,7 @@ body {
 }
 
 .custom-indicators {
-  position: static !important;   /* مهم جداً */
+  position: static !important;   
   transform: none !important;
   margin-top: 15px;
   display: flex;
@@ -347,10 +347,10 @@ body {
 }
 
 .custom-indicators button {
-  width: 8px;          /* تصغير الحجم */
+  width: 8px;         
   height: 8px;
   border-radius: 50%;
-  background-color: #b5b5b5; /* رمادي واضح */
+  background-color: #b5b5b5; 
   border: none;
   opacity: 1;
   padding: 0;
@@ -358,7 +358,7 @@ body {
 }
 
 .custom-indicators .active {
-  background-color: #ef473a; /* لون مميز */
+  background-color: #ef473a; 
   transform: scale(1.4);
 }
 .custom-indicators button {
@@ -385,8 +385,8 @@ body {
     width: 13px !important;
     height: 13px !important;
     margin: 2px !important;
-     background-color: #c8c0c0; /* مهم */
-  opacity: 1 !important; /* مهم جداً */
+     background-color: #c8c0c0; 
+  opacity: 1 !important; 
   transition: 0.3s;
 }
 .custom-carousel-indicators2 li:not(.active) {
@@ -539,11 +539,6 @@ body {
 }
 
 
-
-
-
-
-
 #brand-logos {
     background-color: #dbeefa;
     padding: 25px 0;
@@ -662,9 +657,9 @@ body {
     color: #fff;
 }
 .checkout-actions {
-    width: 70%;   /* نفس عرض الجدول */
-    margin: 20px auto 0 auto;  /* يضعه تحت الجدول وفي المنتصف */
-    text-align: right; /* يمين داخل نفس العرض */
+    width: 70%;   
+    margin: 20px auto 0 auto;  
+    text-align: right; 
 }
 
 .checkout-actions button {
@@ -673,10 +668,10 @@ body {
 /* الحاوية الكبيرة لإجمالي السعر والزر */
 .checkout-section-footer {
     display: flex;
-    flex-direction: column; /* ترتيب السعر ثم الزر تحت بعض */
-    align-items: flex-end;   /* محاذاة العناصر لليسار (حسب اتجاه السعر في الصورة) */
-    padding: 20px 15%;      /* مسافة جانبية لتنسيق الموقع */
-    gap: 15px;              /* مسافة بين السعر والزر */
+    flex-direction: column; 
+    align-items: flex-end;  
+    padding: 20px 15%;      
+    gap: 15px;              
 }
 
 /* تنسيق السعر الإجمالي */
@@ -686,10 +681,10 @@ body {
     color: #444;
 }
 
-/* تنسيق الزر - إلغاء العرض 100% */
+
 .checkout-actions .custom-btn-warning {
-    width: auto !important;     /* إجبار الزر على أخذ حجم محتواه فقط */
-    min-width: 250px;           /* عرض أدنى ليظهر بشكل جيد */
+    width: auto !important;     
+    min-width: 250px;         
     height: 50px;
     display: inline-flex;
     align-items: center;
@@ -778,10 +773,10 @@ body {
 }
 .custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
     display: inline-block;
-    padding-left: 10px;  /* مسافة عن اليمين */
-    padding-right: 10px; /* مسافة عن اليسار */
-    color: #f8ad47;      /* لون السهم البرتقالي */
-    content: ">";        /* الرمز المستخدم كفاصل */
+    padding-left: 10px;  
+    padding-right: 10px;  
+    color: #f8ad47;      
+    content: ">";        
     font-weight: bold;
 }
 .custom-breadcrumb a:hover {
@@ -796,15 +791,15 @@ body {
 /* تحديد حجم الصورة الرئيسية */
 .product-main-img {
     width: 100%;
-    /* تحديد أقصى ارتفاع لتقليل حجم الصورة الضخم */
+    
     max-height: 450px; 
-    /* لضمان عدم تمطط الصورة والحفاظ على جودتها */
+    
     object-fit: contain; 
     border: 1px solid #EBEBEB;
     background-color: #fff;
 }
 
-/* ضبط مكان المؤشرات لكي لا تتداخل مع الصورة */
+
 
 
 .product-category {
@@ -1264,12 +1259,12 @@ h1.custom-heading {
 
 /* تنسيق النشرة البريدية */
 .custom-newsletter .form-control {
-    border-radius: 0 8px 8px 0 !important; /* زوايا دائرية لليمين في RTL */
+    border-radius: 0 8px 8px 0 !important; 
     border: 1px solid #ddd;
 }
 
 .custom-newsletter .btn-send {
-    border-radius: 8px 0 0 8px !important; /* زوايا دائرية لليسار في RTL */
+    border-radius: 8px 0 0 8px !important; 
     background-color: #f8ad47;
     border: none;
 }
@@ -1278,11 +1273,11 @@ h1.custom-heading {
      transform: translateY( -1px);
 }
 
-/* تنسيق زر إرسال الرسالة كما طلبت سابقاً */
+
 .btn-contact-send {
     display: inline-flex;
     align-items: center;
-    flex-direction: row-reverse; /* الأيقونة يسار النص */
+    flex-direction: row-reverse; 
     gap: 10px;
     padding: 12px 25px;
     background-color: #f8ad47;
@@ -1301,26 +1296,26 @@ h1.custom-heading {
 /* الشاشات الصغيرة (الموبايل) */
 @media (max-width: 767px) {
     .about-us, .contact-form {
-        text-align: center; /* توسيط النصوص للموبايل */
+        text-align: center; 
     }
     
     .store-address, .contact-us li {
-        justify-content: center; /* توسيط الأيقونات */
+        justify-content: center; 
     }
 
     .btn-contact-send {
-        width: 100%; /* جعل الزر بعرض الشاشة في الموبايل */
+        width: 100%; 
         justify-content: center;
     }
     
     .custom-newsletter {
-        flex-direction: column; /* جعل حقل الإيميل والزر فوق بعض في الموبايل الصغير جداً */
+        flex-direction: column; 
         gap: 10px;
     }
     
     .custom-newsletter .form-control, 
     .custom-newsletter .btn-send {
-        border-radius: 8px !important; /* زوايا كاملة في وضع الموبايل */
+        border-radius: 8px !important; 
         width: 100%;
     }
 }
@@ -1399,7 +1394,7 @@ h1.custom-heading {
    بدون تغيير التصميم
 ========================= */
 
-/* Tablets (iPad / Medium screens) */
+
 @media (max-width: 992px) {
 
     /* navbar */
