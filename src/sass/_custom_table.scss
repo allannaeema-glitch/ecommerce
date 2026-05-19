@@ -1,0 +1,464 @@
+.custom-table {
+    width: 100%; // أو 70% حسب حاجتك للتصميم
+    border-collapse: collapse;
+
+    // تنسيق العناوين (th)
+    th {
+        color: #c2c2c2;
+        font-weight: normal;
+    }
+
+    // تنسيق الخلايا والعناوين معاً
+    th, td {
+        // تنسيق العمود الأول فقط
+        &:first-child {
+            width: 50%;
+        }
+
+        // تنسيق باقي الأعمدة (توسيط النص)
+        &:not(:first-child) {
+            text-align: center;
+        }
+    }
+
+    // تنسيق h4 داخل الجدول
+    h4 {
+        font-size: 18px;
+        margin: 12px 0;
+    }
+
+    // تنسيق التذييل (tfoot)
+    tfoot td {
+        border-bottom: none;
+        font-size: 1.5rem; // استخدم rem أفضل من النسب المئوية أحياناً
+    }
+}
+
+// 1. يفضل استبدال الألوان المتكررة (مثل #ff3956) بمتغيرات في أعلى الملف
+$primary-color: #ff3956;
+$hover-dark: #c21b1e;
+
+.custom-navbar {
+    border-bottom: 3px solid #f7f8f3;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 0;
+
+    // تجميع كل ما يخص القائمة داخل النافبار
+    .navbar-nav {
+        li {
+            &.active {
+                a.nav-link {
+                    color: $primary-color;
+                    font-weight: 700;
+                    border-bottom: 1px solid $primary-color;
+                }
+                &:hover a.nav-link {
+                    background-color: #e7e7e7;
+                }
+            }
+        }
+    }
+
+    // الأيقونات داخل النافبار
+    .btn-icon {
+        padding: 5px 10px;
+        color: #777;
+        border: 1px solid #ddd;
+        background-color: transparent;
+        border-radius: 2px;
+        font-size: 14px;
+        margin-right: 15px;
+    }
+}
+
+// زر البحث وتأثيراته
+.search-btn {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    width: 65px;
+    color: #fff;
+    height: 38px;
+    padding: 5px 15px 7px;
+    border-radius: 0;
+    font-weight: 700;
+    font-size: 14px;
+
+    // تجميع كل حالات الـ Hover و Active في مكان واحد
+    &:hover, &:active, &:focus {
+        background-color: $hover-dark;
+        border-color: $hover-dark;
+        color: #fff;
+    }
+}
+
+// الروابط العامة
+.nav-link {
+    color: #555555;
+    font-size: 14px;
+    padding: 15px;
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+// القائمة المنسدلة
+.custom-dropdown-menu {
+    li a:hover, label:hover {
+        background-color: #ffe7ea;
+    }
+    label:hover {
+        display: block;
+        width: 100%;
+    }
+}
+
+.categories {
+    border-right: 0 !important;
+    border-radius: 0;
+}
+#carousel-featured {
+    position: relative;
+    padding-bottom: 110px;
+
+    // تنسيق الصور داخل السلايدر
+    .carousel-item img {
+        max-height: 375px;
+        width: 100%;
+        object-fit: contain;
+        display: block;
+        margin: auto;
+    }
+
+    // صندوق تفاصيل المنتج
+    .product-details {
+        border: 1px solid #dddddb;
+        position: relative;
+        top: 50px;
+        padding: 20px;
+        height: 200px;
+        background-color: #f7f8f3;
+
+        h1 {
+            font-size: 175%;
+            font-weight: 700;
+            margin-top: 18px;
+        }
+
+        // تصنيف المنتج الموجود في الزاوية
+        .product-category {
+            border: 1px solid #dddddb;
+            padding: 10px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #f7f8f3;
+        }
+    }
+
+    // أزرار التحكم (السابق والتالي)
+    .carousel-control-prev .fa-chevron-left,
+    .carousel-control-next .fa-chevron-right {
+        color: #868686;
+        font-size: 38px;
+    }
+}
+
+// علامة التخفيضات (Sale Tag)
+.sale {
+    background-color: #53cc07;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+
+    &.large {
+        height: 60px;
+        width: 60px;
+        top: -15px;
+        left: -15px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 130%;
+        padding: 35px;
+        line-height: 90%;
+        flex-direction: column;
+        transform: rotate(-25deg);
+    }
+}
+
+// مؤشرات السلايدر (الصور المصغرة)
+.custom-carousel-indicators {
+    top: 235px;
+    right: 41%;
+
+    &-primary { // هذا يسمى BEM shorthand في Sass
+        width: 70px !important;
+        height: 70px !important;
+        object-fit: cover;
+        border: 2px solid #ddd !important;
+        opacity: 1 !important;
+        cursor: pointer;
+        margin: 0 !important;
+    }
+}
+#stor-features {
+    background-color: #fff;
+    background-image: url(../images/bg_features.png);
+    background-repeat: no-repeat;
+    background-size: auto 60%;
+    background-position: -10px 20px;
+    box-shadow: 0 0 15px #eef0ea;
+    position: relative;
+    top: -30px;
+    padding-top: 25px;
+
+    // تنسيق الصور داخل كل ميزة
+    .feature {
+        img {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        // إضافة حدود جهة اليمين بين كل ميزة والأخرى (باستثناء الأولى أو حسب الترتيب)
+        // استخدام رمز + يعني العنصر الذي يلي العنصر الحالي مباشرة
+        & + .feature {
+            border-right: 1px solid #eef0ea;
+        }
+    }
+}
+
+// 1. العناوين والأسعار
+.heading {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.price {
+    color: #53cc07;
+}
+
+// 2. نظام التقييم (Stars)
+.rating {
+    color: #c2c2c2;
+    .active {
+        color: #f3af41;
+    }
+}
+
+// 3. بطاقة المنتج (Thumbnail)
+.custom-thumbnail {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    &:hover {
+        border-color: #53ccd7;
+        
+        .overlay {
+            opacity: 1;
+        }
+    }
+
+    // طبقة الـ Overlay التي تظهر عند الحوام
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(83, 204, 215, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    // علامة التخفيضات (Sale)
+    .sale {
+        padding: 5px 10px;
+        position: absolute;
+        top: 14px;
+        left: 16px;
+
+        &::before {
+            content: "-";
+        }
+    }
+}
+
+// 4. أزرار الإضافة للسلة
+.add-to-card-plus {
+    background-color: #ff3956;
+    border-color: #ff3956;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+// 5. مؤشرات السلايدر (تم دمج النسخ المكررة)
+.custom-indicators {
+    position: static !important;
+    transform: none !important;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+
+    button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #b5b5b5 !important;
+        border: none;
+        opacity: 1;
+        padding: 0;
+        transition: 0.3s ease;
+
+        &.active {
+            background-color: #565656 !important;
+        }
+    }
+}
+
+// 6. مؤشرات سلايدر المنتجات (Carousel Indicators)
+#products-carousel {
+    position: relative;
+
+    .carousel-indicators {
+        position: relative;
+        margin-top: 25px;
+        bottom: 0;
+
+        [data-bs-target] {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #bbb;
+            border: none;
+            margin: 0 6px;
+            opacity: 1;
+        }
+    }
+}
+
+// مؤشرات إضافية (النقاط الصغيرة أسفل السلايدر)
+.custom-carousel-indicators2 {
+    bottom: -70px !important;
+
+    li {
+        width: 13px !important;
+        height: 13px !important;
+        margin: 2px !important;
+        background-color: #c8c0c0;
+        opacity: 1 !important;
+        transition: 0.3s;
+
+        &.active {
+            background-color: #565656 !important;
+        }
+        
+        &:not(.active) {
+            background-color: #c8c0c0;
+        }
+    }
+}
+// 1. قسم بطاقة المنتج (The Panel)
+.panel {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+
+    // تأثير الحوام (Hover)
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    // الصور داخل البطاقة
+    img {
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    // ترويسة البطاقة (العنوان والسعر)
+    .clearfix {
+        margin-bottom: 10px;
+    }
+
+    .float-start {
+        font-size: 16px;
+        font-weight: 600;
+        color: #222;
+
+        // صورة البراند الصغيرة بجانب الاسم
+        img {
+            width: 40px;
+            margin-left: 8px;
+        }
+    }
+
+    // النصوص الفرعية والبراند
+    .d-inline {
+        font-size: 13px;
+        color: #555;
+    }
+}
+
+// 2. النصوص الوصفية (Description)
+.custom-text-muted {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.6;
+    margin: 10px 0; // اختصار لـ margin-top و margin-bottom
+}
+
+// 3. نظام التقييم (Rating)
+.rating {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+
+    i {
+        color: #ddd;
+        font-size: 14px;
+
+        &.active {
+            color: #f5a623;
+        }
+    }
+}
+
+// 4. قسم شعارات الشركات (Brand Logos Section)
+#brand-logos {
+    background-color: #dbeefa;
+    padding: 25px 0;
+    color: #555555;
+    display: flex;       // إضافة لتحسين محاذاة الصور
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    img {
+        margin: 0 25px; // اختصار للمسافات يميناً ويساراً
+        max-width: 100px;
+        max-height: 100px;
+        filter: grayscale(100%); // نصيحة جمالية: جعل الشعارات رمادية
+        transition: 0.3s;
+
+        &:hover {
+            filter: grayscale(0%); // تلون عند الحوام
+        }
+    }
+}

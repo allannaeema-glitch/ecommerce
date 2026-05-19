@@ -2,10 +2,7 @@ window.bootstrap = require("bootstrap/dist/js/bootstrap.bundle.js");
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/js/all.min";
 import "./css/style.css";
-
-document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(item =>
-  new bootstrap.Tooltip(item)
-);
+import "./sass/style.scss";
 
 
 document.querySelectorAll('.size-option input[type="radio"]').forEach(item => {
@@ -80,10 +77,12 @@ function updateTotalPrice() {
         totalPriceForAllProducts += totalPriceForProduct;
     });
 
-    document.getElementById('total-price-for-all-product').innerHTML =
-        totalPriceForAllProducts + "$";
+    let total_price = document.getElementById('total-price-for-all-product');
+  if (total_price) {
+    total_price.innerHTML =
+      totalPriceForAllProducts + "$";
+  }
 }
-
 
 /* تحديث الكمية */
 document.querySelectorAll('[data-product-quantity]').forEach(item => {

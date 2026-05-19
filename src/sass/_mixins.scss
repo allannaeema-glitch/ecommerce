@@ -1,0 +1,19 @@
+// 1. يجب استدعاء مكتبة الألوان الخاصة بـ Sass في أول السطر
+@use "sass:color";
+
+@mixin button-style($color) {
+    color: $color;
+    border-color: $color;
+    background-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:active:hover {
+        // 2. استخدام التعديل الحديث بدلاً من دالة darken القديمة
+        color: color.adjust($color, $lightness: -25%);
+        border-color: color.adjust($color, $lightness: -25%);
+        background-color: transparent;
+    }
+}
